@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Știința pentru toți</title>
+<link href="css/Css-stiinta.css" rel="stylesheet" type="text/css">
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="container">
+  <header>
+<nav class="secondary_header" id="menu">
+      <ul>
+        <li><a HREF="stiinta.html">ACASĂ</a></li>
+        <li><a HREF="mate.html">MATEMATICĂ</a></li>
+        <li><a HREF="astro.html">ZODIAC</a></li>
+        <li><a HREF="experimente.html">EXPERIMENTE</a></li>
+        <li><a HREF="jocuri.html">JOCURI</a></li>
+      </ul>
+    </nav>
+    <div class="primary_header">
+      <h1 class="title">Jocuri matematice</h1>
+      <table width="100%">
+		<tr>
+			<td width="45%"><hr></td>
+			<td align="center"><font style="font-size:40px;">֎</font></td>
+			<td width="45%"><hr></td>
+		</tr>
+	</table>
+      <h2>Să invățăm matematica prin joc!</h2>
+    </div>
+  </header>
+  <section>
+    <h2 class="noDisplay">Main Content</h2>
+<aside class="right_article"> </aside>
+<div id="ecuatie">
+
+
+	<div class="experiment">
+		<button onclick ="suma1(10)">Nivel 1</button>
+	<button onclick ="suma2(10)">Nivel 2</button>
+	<button onclick ="suma1(20)">Nivel 3</button>
+	<button onclick ="suma2(20)">Nivel 4</button>
+	<br>
+	<span id="calcul">Alege nivelul</span>
+	<input type="text" id="rezultat1"></input>
+	<button onclick ="valideaza()">Verifica</button>
+
+	<p id="arata"></p>
+	<button onclick ="clear3()">Calcul nou</button><br>
+	<button onclick ="clear2()">Joc nou</button>
+
+<script>
+	function suma1(a){
+		numar1 = Math.floor(Math.random() * a) + 1;
+		numar2 = Math.floor(Math.random() * (a - numar1));
+		rezultat = numar1 + " + " + numar2 + " = " ;
+		document.getElementById('calcul').innerHTML = rezultat;
+			
+	}
+	function suma2(b){
+		numar1 = Math.floor(Math.random() * b) + 1;
+		numar2 = Math.floor(Math.random() * b) + 1;
+		rezultat = numar1 + " + " + numar2 + " = " ;
+		document.getElementById('calcul').innerHTML = rezultat;
+			
+	}
+	
+	
+	function valideaza()
+	{
+		if(rezultat1.value == numar1+numar2) {document.getElementById('arata').innerHTML = "corect";
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "1.jpg");
+			x.setAttribute("alt", "Corect");
+			document.body.appendChild(x)}
+		else {
+		document.getElementById('arata').innerHTML = "gresit";
+		var x = document.createElement("IMG");
+			x.setAttribute("src", "2.jpg");
+			document.body.appendChild(x)}
+	}
+	function clear3()
+	{ 
+		document.getElementById('calcul').innerHTML = "Alege nivelul";
+		document.getElementById('arata').innerHTML = ""
+		rezultat1.value = "";
+	}
+	function clear2()
+	{
+	    location.reload();
+	}
+</script>
+	</div>
+
+</div>
+  </section>
+  
+<div class="row blockDisplay">
+<div class="column_half right_half"> </div>
+  </div>
+<footer class="secondary_header footer">
+    <div class="copyright">
+    <a href="https://infoeducatie.ro/">InfoEducație.ro</a> - Secțiunea Web<br>
+    	&#169 Derscanu Smaranda<br>
+    Liceul Pedagogic "Nicolae Iorga" Botoșani
+    </div>
+  </footer>
+</div>
+</body>
+</html>
